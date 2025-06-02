@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expence manager</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Expence tracker</h2>
+        <form id="expenceadd">
+            <input type="text" id="description" placeholder="Description">
+            <select id="about">
+                <option value="#">Select</option>
+                <option value="food">Food</option>
+                <option value="Cloth">Clothing</option>
+                <option value="grocery">Grocery</option>
+                <option value="groom">Grooming</option> 
+                <option value="other">Other</option>
+            </select>
+            <input type="number" id="amount" placeholder="Amount">
+            <input type="submit">
+        </form>
+        <h2>Expence List</h2>
+        <table id="list">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Where</th>
+                    <th>Amont</th>                    
+                </tr>
+            </thead>
+            <tr></tr>
+        </table>
+    </div>
+
+
+
+    <script>
+        const form=document.getElementById("expenceadd");
+       
+
+         const list=document.getElementById("list");
+         form.addEventListener('submit', function(event){
+            event.preventDefault();
+            const desc =document.getElementById("description").value;
+            const about =document.getElementById("about").value;    
+             const amount =document.getElementById("amount").value;
+             
+            const newRow =document.createElement('tr');
+
+            newRow.innerHTML=`<td>${desc}</td>
+        <td>${about}</td>
+            <td>${amount}</td>`;
+            list.appendChild(newRow);
+         })
+
+
+    </script>
+</body>
+</html>
