@@ -580,18 +580,22 @@ h1, h2, h3 {
 }
 
 /* --- Projects Section --- */
+
+/* Styles the entire section container */
 .projects-section {
     background-color: var(--color-bg-medium);
     border-top: 1px solid rgba(0, 191, 255, 0.1);
     border-bottom: 1px solid rgba(138, 43, 226, 0.1);
 }
 
+/* Defines the grid layout for the cards */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 50px;
 }
 
+/* Styles for each individual project card */
 .project-card {
     background-color: var(--color-bg-light);
     border-radius: var(--border-radius-card);
@@ -609,29 +613,32 @@ h1, h2, h3 {
     border: 1px solid transparent; /* Initial transparent border */
 }
 
+/* The hover effect for the card */
 .project-card:hover {
     transform: translateY(-15px);
     box-shadow: var(--shadow-deep);
     border-color: var(--color-accent-purple); /* Border color on hover */
 }
 
-.card-background-gradient { /* Inner gradient background */
+/* The decorative gradient that appears on hover */
+.card-background-gradient {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(0, 191, 255, 0.05), rgba(138, 43, 226, 0.05));
+    background: linear-gradient(45deg, rgba(17, 162, 211, 0.05), rgba(138, 43, 226, 0.05));
     opacity: 0;
     transition: opacity 0.5s var(--transition-ease);
-    z-index: 0; /* Behind content but above main background */
+    z-index: 0;
 }
 
 .project-card:hover .card-background-gradient {
     opacity: 1;
 }
 
-.project-card img {
+/* Styles for the project image and the embedded iframe */
+.project-card img, iframe {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -646,13 +653,14 @@ h1, h2, h3 {
     filter: brightness(0.9) grayscale(0);
 }
 
+/* The container for the card's text content */
 .project-content {
     padding: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: 1; /* Ensure content is above gradient */
+    z-index: 1;
 }
 
 .project-content h3 {
@@ -668,6 +676,7 @@ h1, h2, h3 {
     flex-grow: 1;
 }
 
+/* The container for the skill tags (e.g., #Html, #Css) */
 .project-meta {
     font-size: 0.85em;
     color: var(--color-text-secondary);
@@ -686,6 +695,7 @@ h1, h2, h3 {
     border: 1px solid rgba(0, 191, 255, 0.2);
 }
 
+/* The "View Project" and "View Source Code" links */
 .view-details-btn {
     display: inline-flex;
     align-items: center;
@@ -700,7 +710,6 @@ h1, h2, h3 {
     color: var(--color-accent-green);
     transform: translateX(5px);
 }
-
 /* --- Contact Section --- */
 .contact-section {
     background-color: var(--color-bg-dark);
